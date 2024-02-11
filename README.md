@@ -1,2 +1,30 @@
-# klodovic/Optimal-Job-Interview-Scheduling
- SWE - Taks 3
+OPTIMAL JOB INTERVIEW SCHEDULING
+
+TASK OVERVIEW</br>
+The task is to develop a REST API endpoint that processes POST requests containing two lists: start times and end times of job interviews. The goal is to calculate the maximum number of non-overlapping interviews a person can attend, considering that transitioning from one interview to another requires no time if the next interview starts exactly at or after the previous one ends.
+
+INSTRUCTIONS</br>
+1. Write a REST endpoint that receives a POST request with JSON data in a format similar to the one given in the following example:
+{
+  "start_times": [10, 20, 30, 40, 50, 60],
+  "end_times": [15, 25, 35, 45, 55, 65]
+}
+
+2. Implement an algorithm to calculate the maximum number of interviews a person can attend without any overlap.
+3. Return the response formatted in the following way:
+{
+  "max_interviews : 3
+}
+4. Follow RESTful principles when designing your API endpoint. Ensure your API responds with appropriate HTTP status codes (e.g., 200 OK for successful requests, 400 Bad Request for invalid input).
+
+EVALUATION CRITERIA</br>
+- Code Quality: Code readability, maintainability, simplicity, and adherence to best practices are essential.
+- Correctness: Your algorithm must accurately determine the maximum number of interviews that can be attended, given the constraints.
+- Efficiency: The solution should be optimized with regard to algorithmic time complexity.
+
+
+
+
+<h1>Output</h1>
+
+![task3](https://github.com/klodovic/klodovic-Optimal-Job-Interview-Scheduling/assets/61901937/70571cb3-8d26-49b0-b82c-7c5f633642bd)
