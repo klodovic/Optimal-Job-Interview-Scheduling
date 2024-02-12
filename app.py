@@ -6,7 +6,6 @@ app = Flask(__name__)
 def countJobInteviews():
     
     data = request.get_json() 
-    
     response = ""
     
     #checking if data exists
@@ -26,16 +25,27 @@ def countJobInteviews():
     
     #merging lists into dictionary
     interviews = dict(zip(start_times, end_times))
-
- 
-    counter = 0
+    print(interviews)
     
-    #looping thru dictionary
-    for start, end in interviews.items():
-        #print("start:", start, " end:", end)
-        if end >= start:
-            counter = counter + 1
-            #print(count)
+    
+    counter = 1
+    if interviews.__len__() == 0:
+        counter = 0
+ 
+    
+    #looping through dictionary and counting
+    end = list(interviews.values())[0] 
+    
+    for i in range(1, interviews.__len__()):
+        #print(i, "sastanak završava: ", end)
+        start = list(interviews.items())[i][0]
+        #print(i+1, "sastanak pocinje: ", start)
+        if end <= start:
+            counter += 1
+            end = list(interviews.items())[i][1]
+        else:
+            end = list(interviews.items())[i][1]
+        
     
     return jsonify({"max_interviews" : counter}), 200
 
